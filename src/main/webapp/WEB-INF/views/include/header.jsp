@@ -44,7 +44,7 @@
 
 		<header class="main-header">
 			<!-- Logo -->
-			<a href="http://192.168.0.65:8080/" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+			<a href="http://localhost:8080/" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>IBU</b></span> <!-- logo for regular state and mobile devices -->
 				<span class="logo-lg"><b>I.BIT.U</b> PROJECT</span>
 			</a>
@@ -244,12 +244,12 @@
 							class="fa fa-paper-plane"></i> <span>Notice</span>
 					</a></li>
 
-					<li class="treeview"><a href="qna.html"> <i
+					<li class="treeview"><a href="http://localhost:8080/qboard/list"> <i
 							class="fa fa-mortar-board"></i> <span>Q&A</span>
 					</a></li>
 
 					<li class="header">REFERENCE</li>
-					<li class="treeview"><a href="http://192.168.0.39:8080/snboard/list"> <i
+					<li class="treeview"><a href="http://localhost:8080/dboard/list"> <i
 							class="fa fa-download"></i> <span>Downloads</span>
 					</a></li>
 				</ul>

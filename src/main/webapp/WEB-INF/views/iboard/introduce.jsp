@@ -52,7 +52,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="http://localhost:8080/" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>IBU</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -180,7 +180,7 @@
             <li class="header">WELCOME</li>
 
             <li class="active treeview">
-              <a href="/resources/introduce.html">
+              <a href="http://localhost:8080/iboard/">
                 <i class="fa fa-info-circle"></i> <span>Introduce</span>
               </a>
             </li>
@@ -193,14 +193,14 @@
             </li>
 
             <li class="treeview">
-              <a href="qna.html">
+              <a href="http://localhost:8080/qboard/list">
                 <i class="fa fa-mortar-board"></i> <span>Q&A</span>
               </a>
             </li>
 
             <li class="header">REFERENCE</li>
             <li class="treeview">
-              <a href="downloads.html">
+              <a href="http://localhost:8080/dboard/list">
                 <i class="fa fa-download"></i> <span>Downloads</span>
               </a>
             </li>
