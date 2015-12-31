@@ -60,7 +60,7 @@
 						console.log(formObj);
 
 						$(".btn-warning").on("click", function() {
-							self.location = "/board/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}";
+							self.location = "/nboard/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}";
 						});
 
 						$(".btn-primary").on("click", function() {

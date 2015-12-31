@@ -56,19 +56,19 @@
 						console.log(formObj);
 
 						$(".btn-warning").on("click", function() {
-							formObj.attr("action", "/board/modify");
+							formObj.attr("action", "/nboard/modify");
 							formObj.attr("method", "get");
 							formObj.submit();
 						});
 
 						$(".btn-danger").on("click", function() {
-							formObj.attr("action", "/board/remove");
+							formObj.attr("action", "/nboard/remove");
 							formObj.submit();
 						});
 
 						$(".btn-primary").on("click", function() {
 							formObj.attr("method", "get");
-							formObj.attr("action", "/board/listPage");
+							formObj.attr("action", "/nboard/listPage");
 							formObj.submit();
 							/* self.location = "/board/listAll"; */
 						});

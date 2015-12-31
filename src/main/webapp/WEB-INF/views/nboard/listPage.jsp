@@ -15,10 +15,10 @@
 
 			<div class="box">
 				<div class="box-header with-border">
-					<h3 class="box-title">LIST PAGING</h3>
+					<h3 class="box-title">NOTICE</h3>
 				</div>
 				<div class="box-body">
-					<button id='newBtn'>New Board</button>
+					<button id='newBtn'>REGISTER</button>
 				</div>
 
 				<table class="table table-bordered">
@@ -35,7 +35,7 @@
 						<tr>
 							<td>${boardVO.bno}</td>
 							<td><a
-								href='/board/read${pageMaker.makeQuery(pageMaker.cri.page) }&bno=${boardVO.bno}'>
+								href='/nboard/read${pageMaker.makeQuery(pageMaker.cri.page) }&bno=${boardVO.bno}'>
 									${boardVO.title}</a></td>
 							<td>${boardVO.writer}</td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
@@ -90,6 +90,11 @@
 	if (result == 'SUCCESS') {
 		alert("처리가 완료되었습니다.");
 	}
+	$(document).ready(function(){
+		$('#newBtn').on("click",function(evt){
+			self.location = "register";
+		});
+	});
 </script>
 
 <%@include file="../include/footer.jsp"%>

@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@RequestMapping("/board/*")
+@RequestMapping("/nboard/*")
 public class BoardController {
 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
-
+ 
 	@Autowired
 	private BoardService service;
 
@@ -41,7 +41,7 @@ public class BoardController {
 		rttr.addFlashAttribute("msg", "success");
 
 		// return "/board/success";
-		return "redirect:/board/listAll";
+		return "redirect:/nboard/list";
 
 	}
 
@@ -73,7 +73,7 @@ public class BoardController {
 		rttr.addAttribute("perPageNum", cri.getPerPageNum());
 		rttr.addFlashAttribute("msg", "SUCCESS");
 
-		return "redirect:/board/listPage";
+		return "redirect:/nboard/listPage";
 	}
 
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
@@ -92,7 +92,7 @@ public class BoardController {
 		rttr.addAttribute("perPageNum", cri.getPerPageNum());
 		rttr.addFlashAttribute("msg", "SUCCESS");
 
-		return "redirect:/board/listPage";
+		return "redirect:/nboard/listPage";
 	}
 
 	@RequestMapping(value = "/listPage", method = RequestMethod.GET)

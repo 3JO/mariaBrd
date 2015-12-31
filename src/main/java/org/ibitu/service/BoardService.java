@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.ibitu.domain.BoardVO;
 import org.ibitu.domain.Criteria;
+import org.ibitu.domain.SearchCriteria;
 
 public interface BoardService {
 
@@ -20,5 +21,11 @@ public interface BoardService {
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 	
 	public int listCntCriteria(Criteria cri) throws Exception;
+	
+	public List<BoardVO> listSearchCriteria (SearchCriteria cri) throws Exception;
+	
+	public int listSearchCount(SearchCriteria cri) throws Exception; 
+	
+	public List<String> getAttach(Integer bno)throws Exception;
 
 }
