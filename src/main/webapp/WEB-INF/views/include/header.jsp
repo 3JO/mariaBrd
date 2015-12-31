@@ -235,12 +235,12 @@
 				<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu">
 					<li class="header">WELCOME</li>
-					<li class="active treeview"><a href="introduce.html"> <i
+					<li class="active treeview"><a href="http://localhost:8080/iboard/"> <i
 							class="fa fa-info-circle"></i> <span>Introduce</span>
 					</a></li>
 
 					<li class="header">BOARDS</li>
-					<li class="treeview"><a href="notice.html"> <i
+					<li class="treeview"><a href="http://localhost:8080/snboard/list"> <i
 							class="fa fa-paper-plane"></i> <span>Notice</span>
 					</a></li>
 

@@ -1,0 +1,9 @@
+img {max-width: 100%;}
+
+video{
+    width:100%;
+
+    border:3px solid lightskyblue;
+    display:block;
+
+}
