@@ -135,7 +135,7 @@
 	$(document).ready(
 			function() {
 
-				$('#searchBtn').on(
+				$('.bg-olive').on(
 						"click",
 						function(event) {
 
@@ -147,7 +147,7 @@
 
 						});
 
-				$('#newBtn').on("click", function(evt) {
+				$('.btn-primary').on("click", function(evt) {
 
 					self.location = "register";
 
