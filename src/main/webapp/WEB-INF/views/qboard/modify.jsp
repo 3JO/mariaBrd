@@ -37,20 +37,20 @@
 						<div class="form-group">
 							<label for="exampleInputEmail1">BNO</label>
 							<input type="text" name='bno' class="form-control" 
-								value="${boardVO.bno}" readonly="readonly">
+								value="${QboardVO.bno}" readonly="readonly">
 						</div>
 
 						<div class="form-group">
 							<label for="exampleInputEmail1">Title</label> <input type="text"
-								name='title' class="form-control" value="${boardVO.title}">
+								name='title' class="form-control" value="${QboardVO.title}">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Content</label>
-							<textarea class="form-control" name="content" rows="3">${boardVO.content}</textarea>
+							<textarea class="form-control" name="content" rows="3">${QboardVO.content}</textarea>
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">Writer</label> <input type="text"
-								name="writer" class="form-control" value="${boardVO.writer}">
+								name="writer" class="form-control" value="${QboardVO.writer}">
 						</div>
 					</div>
 					<!-- /.box-body -->

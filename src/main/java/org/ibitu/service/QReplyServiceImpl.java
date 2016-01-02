@@ -5,7 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.ibitu.domain.Criteria;
-import org.ibitu.domain.ReplyVO;
+import org.ibitu.domain.QReplyVO;
 import org.ibitu.persistence.QBoardMapper;
 import org.ibitu.persistence.QReplyMapper;
 import org.springframework.stereotype.Service;
@@ -22,20 +22,20 @@ public class QReplyServiceImpl implements QReplyService {
 
   @Transactional
   @Override
-  public void addReply(ReplyVO vo) throws Exception {
+  public void addReply(QReplyVO vo) throws Exception {
 
     mapper.create(vo);
     boardMapper.updateReplyCnt(vo.getBno(), 1);
   }
 
   @Override
-  public List<ReplyVO> listReply(Integer bno) throws Exception {
+  public List<QReplyVO> listReply(Integer bno) throws Exception {
 
     return mapper.list(bno);
   }
 
   @Override
-  public void modifyReply(ReplyVO vo) throws Exception {
+  public void modifyReply(QReplyVO vo) throws Exception {
 
     mapper.update(vo);
   }
@@ -50,7 +50,7 @@ public class QReplyServiceImpl implements QReplyService {
   }
 
   @Override
-  public List<ReplyVO> listReplyPage(Integer bno, Criteria cri) 
+  public List<QReplyVO> listReplyPage(Integer bno, Criteria cri) 
       throws Exception {
 
     return mapper.listPage(bno, cri);

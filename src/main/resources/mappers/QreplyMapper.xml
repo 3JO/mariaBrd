@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="org.ibitu.persistence.QReplyMapper">
 
-	<select id="list" resultType="ReplyVO">
+	<select id="list" resultType="QReplyVO">
 		select
 		*
 		from
@@ -31,7 +31,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 
 
-	<select id="listPage" resultType="ReplyVO">
+	<select id="listPage" resultType="QReplyVO">
 		select
 		*
 		from

@@ -2,9 +2,9 @@ package org.ibitu.persistence;
 
 import java.util.List;
 
-import org.ibitu.domain.BoardVO;
 import org.ibitu.domain.Criteria;
-import org.ibitu.domain.ReplyVO;
+import org.ibitu.domain.QBoardVO;
+import org.ibitu.domain.QReplyVO;
 import org.ibitu.domain.SearchCriteria;
 
 public interface QCRUDMapper<V, K> {
@@ -17,16 +17,16 @@ public interface QCRUDMapper<V, K> {
 
 	public void delete(K key) throws Exception;
 
-	public List<BoardVO> listAll() throws Exception;
+	public List<QBoardVO> listAll() throws Exception;
 
 	// paging step1 (이후 listCriteria 사용)
 	// public List<BoardVO> listPage(int page) throws Exception;
 
-	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+	public List<QBoardVO> listCriteria(Criteria cri) throws Exception;
 	
 	public int cntPaging(Criteria cri) throws Exception;
 	
-	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception;
+	public List<QBoardVO> listSearch(SearchCriteria cri) throws Exception;
 
 	public int listSearchCount(SearchCriteria cri) throws Exception;
 
@@ -34,9 +34,9 @@ public interface QCRUDMapper<V, K> {
 
 	public void updateViewCnt(Integer bno) throws Exception;
 	
-	public List<ReplyVO> list(Integer bno) throws Exception;
+	public List<QReplyVO> list(Integer bno) throws Exception;
 
-	public List<ReplyVO> listPage(
+	public List<QReplyVO> listPage(
 	      Integer bno, Criteria cri) throws Exception;
 
 	public int count(Integer bno) throws Exception;

@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import org.ibitu.domain.Criteria;
 import org.ibitu.domain.PageMaker;
+import org.ibitu.domain.QReplyVO;
 import org.ibitu.domain.ReplyVO;
 import org.ibitu.service.QReplyService;
 import org.springframework.http.HttpStatus;
@@ -26,7 +27,7 @@ public class QReplyController {
   private QReplyService service;
 
   @RequestMapping(value = "", method = RequestMethod.POST)
-  public ResponseEntity<String> register(@RequestBody ReplyVO vo) {
+  public ResponseEntity<String> register(@RequestBody QReplyVO vo) {
 
     ResponseEntity<String> entity = null;
     try {
@@ -40,9 +41,9 @@ public class QReplyController {
   }
 
   @RequestMapping(value = "/all/{bno}", method = RequestMethod.GET)
-  public ResponseEntity<List<ReplyVO>> list(@PathVariable("bno") Integer bno) {
+  public ResponseEntity<List<QReplyVO>> list(@PathVariable("bno") Integer bno) {
 
-    ResponseEntity<List<ReplyVO>> entity = null;
+    ResponseEntity<List<QReplyVO>> entity = null;
     try {
       entity = new ResponseEntity<>(service.listReply(bno), HttpStatus.OK);
 
@@ -55,7 +56,7 @@ public class QReplyController {
   }
 
   @RequestMapping(value = "/{rno}", method = { RequestMethod.PUT, RequestMethod.PATCH })
-  public ResponseEntity<String> update(@PathVariable("rno") Integer rno, @RequestBody ReplyVO vo) {
+  public ResponseEntity<String> update(@PathVariable("rno") Integer rno, @RequestBody QReplyVO vo) {
 
     ResponseEntity<String> entity = null;
     try {
@@ -99,7 +100,7 @@ public class QReplyController {
       pageMaker.setCri(cri);
 
       Map<String, Object> map = new HashMap<String, Object>();
-      List<ReplyVO> list = service.listReplyPage(bno, cri);
+      List<QReplyVO> list = service.listReplyPage(bno, cri);
 
       map.put("list", list);
 

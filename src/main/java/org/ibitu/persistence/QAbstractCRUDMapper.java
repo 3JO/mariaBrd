@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
-import org.ibitu.domain.BoardVO;
 import org.ibitu.domain.Criteria;
-import org.ibitu.domain.ReplyVO;
+import org.ibitu.domain.QBoardVO;
+import org.ibitu.domain.QReplyVO;
 import org.ibitu.domain.SearchCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -75,7 +75,7 @@ abstract class QAbstractCRUDMapper<V, K> implements QCRUDMapper<V, K> {
 	}
 
 	@Override
-	public List<BoardVO> listAll() throws Exception {
+	public List<QBoardVO> listAll() throws Exception {
 
 		return session.selectList(namespace + ".listAll");
 	}
@@ -95,7 +95,7 @@ abstract class QAbstractCRUDMapper<V, K> implements QCRUDMapper<V, K> {
 
 	// paging step2
 	@Override
-	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+	public List<QBoardVO> listCriteria(Criteria cri) throws Exception {
 
 		return session.selectList(namespace + ".listCriteria", cri);
 	}
@@ -106,7 +106,7 @@ abstract class QAbstractCRUDMapper<V, K> implements QCRUDMapper<V, K> {
 	}
 
 	@Override
-	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
+	public List<QBoardVO> listSearch(SearchCriteria cri) throws Exception {
 
 		return session.selectList(namespace + ".listSearch", cri);
 	}
@@ -136,13 +136,13 @@ abstract class QAbstractCRUDMapper<V, K> implements QCRUDMapper<V, K> {
 	}
 
 	@Override
-	public List<ReplyVO> list(Integer bno) throws Exception {
+	public List<QReplyVO> list(Integer bno) throws Exception {
 	    return session.selectList(namespace + ".list", bno);
 	}
 
 
 	@Override
-	public List<ReplyVO> listPage(Integer bno, Criteria cri) throws Exception {
+	public List<QReplyVO> listPage(Integer bno, Criteria cri) throws Exception {
 		Map<String, Object> paramMap = new HashMap<>();
 
 	    paramMap.put("bno", bno);

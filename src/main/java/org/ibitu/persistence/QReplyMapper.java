@@ -1,7 +1,7 @@
 package org.ibitu.persistence;
 
-import org.ibitu.domain.ReplyVO;
+import org.ibitu.domain.QReplyVO;
 
-public interface QReplyMapper extends QCRUDMapper<ReplyVO, Integer> {
+public interface QReplyMapper extends QCRUDMapper<QReplyVO, Integer> {
 
 }

@@ -11,7 +11,7 @@
 		values(#{title}, #{content}, #{writer})
 	</insert>
 
-	<select id="read" resultType="BoardVO">
+	<select id="read" resultType="QBoardVO">
 		select bno, title, content, writer, regdate, viewcnt
 		from ibitu.tbl_qboard 
 		where bno = #{bno}
@@ -26,7 +26,7 @@
 		delete from tbl_qboard where bno = #{bno}
 	</delete>
 
-	<select id="listAll" resultType="BoardVO">
+	<select id="listAll" resultType="QBoardVO">
 	<![CDATA[
  	select bno, title, content, writer, regdate, viewcnt 
     from ibitu.tbl_qboard 
@@ -35,7 +35,7 @@
     ]]>
 	</select>
 
-	<select id="listPage" resultType="BoardVO">
+	<select id="listPage" resultType="QBoardVO">
     <![CDATA[
     select bno, title, content, writer, regdate, viewcnt 
     from ibitu.tbl_qboard 
@@ -45,7 +45,7 @@
     ]]>
 	</select>
 	
-	<select id="listCriteria" resultType="BoardVO">
+	<select id="listCriteria" resultType="QBoardVO">
     <![CDATA[
     select bno, title, content, writer, regdate, viewcnt, replycnt 
     from ibitu.tbl_qboard 
@@ -92,7 +92,7 @@
 		</if>
 	</sql>
 	
-		<select id="listSearch" resultType="BoardVO">
+		<select id="listSearch" resultType="QBoardVO">
 	<![CDATA[  
 	  select * 
 	  from ibitu.tbl_qboard 

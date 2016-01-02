@@ -1,9 +1,9 @@
 package org.ibitu.persistence;
 
-import org.ibitu.domain.BoardVO;
+import org.ibitu.domain.QBoardVO;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class QBoardMapperImpl extends QAbstractCRUDMapper<BoardVO, Integer> implements QBoardMapper {
+public class QBoardMapperImpl extends QAbstractCRUDMapper<QBoardVO, Integer> implements QBoardMapper {
 
 }

@@ -2,8 +2,8 @@ package org.ibitu.service;
 
 import java.util.List;
 
-import org.ibitu.domain.BoardVO;
 import org.ibitu.domain.Criteria;
+import org.ibitu.domain.QBoardVO;
 import org.ibitu.domain.SearchCriteria;
 import org.ibitu.persistence.QBoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +19,9 @@ public class QBoardServiceImpl implements QBoardService {
 	
 	@Transactional
 	@Override
-	public void regist(BoardVO board) throws Exception {
+	public void regist(QBoardVO board) throws Exception {
 		mapper.create(board);
-		
+	
 		String[] files = board.getFiles();
 		
 		if(files == null) { return; }
@@ -35,14 +35,14 @@ public class QBoardServiceImpl implements QBoardService {
 	
 	@Transactional(isolation=Isolation.READ_COMMITTED)
 	@Override
-	public BoardVO read(Integer bno) throws Exception {
+	public QBoardVO read(Integer bno) throws Exception {
 
 		mapper.updateViewCnt(bno);
 		return mapper.read(bno);
 	}
 
 	@Override
-	public void modify(BoardVO board) throws Exception {
+	public void modify(QBoardVO board) throws Exception {
 		mapper.update(board);
 
 	}
@@ -54,12 +54,12 @@ public class QBoardServiceImpl implements QBoardService {
 	}
 
 	@Override
-	public List<BoardVO> listAll() throws Exception {
+	public List<QBoardVO> listAll() throws Exception {
 		return mapper.listAll();
 	}
 
 	@Override
-	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+	public List<QBoardVO> listCriteria(Criteria cri) throws Exception {
 		return mapper.listCriteria(cri);
 	}
 	
@@ -69,7 +69,7 @@ public class QBoardServiceImpl implements QBoardService {
 	}
 
 	@Override
-	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+	public List<QBoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
 		return mapper.listSearch(cri);
 	}
 

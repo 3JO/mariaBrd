@@ -50,7 +50,7 @@
 
 				<form role="form" action="modifyPage" method="post">
 
-					<input type='hidden' name='bno' value="${boardVO.bno}"> <input
+					<input type='hidden' name='bno' value="${QboardVO.bno}"> <input
 						type='hidden' name='page' value="${cri.page}"> <input
 						type='hidden' name='perPageNum' value="${cri.perPageNum}">
 					<input type='hidden' name='searchType' value="${cri.searchType}">
@@ -61,17 +61,17 @@
 				<div class="box-body">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Title</label> <input type="text"
-							name='title' class="form-control" value="${boardVO.title}"
+							name='title' class="form-control" value="${QboardVO.title}"
 							readonly="readonly">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Content</label>
 						<textarea class="form-control" name="content" rows="3"
-							readonly="readonly">${boardVO.content}</textarea>
+							readonly="readonly">${QboardVO.content}</textarea>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Writer</label> <input type="text"
-							name="writer" class="form-control" value="${boardVO.writer}"
+							name="writer" class="form-control" value="${QboardVO.writer}"
 							readonly="readonly">
 					</div>
 				</div>
@@ -88,10 +88,9 @@
 
 					<ul class="mailbox-attachments clearfix uploadedList">
 					</ul>
-					<c:if test="${login.uid == boardVO.writer}">
+					
 						<button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
-						<button type="submit" class="btn btn-danger" id="removeBtn">REMOVE</button>
-					</c:if>
+						<button type="submit" class="btn btn-danger" id="removeBtn">REMOVE</button>					
 					<button type="submit" class="btn btn-primary" id="goListBtn">GO
 						LIST</button>
 				</div>
@@ -115,39 +114,38 @@
 				<div class="box-header">
 					<h3 class="box-title">ADD NEW REPLY</h3>
 				</div>
-				<c:if test="${not empty login}">
 					<div class="box-body">
 						<label for="exampleInputEmail1">Writer</label> <input
 							class="form-control" type="text" placeholder="USER ID"
-							id="newReplyWriter" value="${login.uid }" readonly="readonly">
-						<label for="exampleInputEmail1">Reply Text</label> <input
-							class="form-control" type="text" placeholder="REPLY TEXT"
-							id="newReplyText">
+							id="newReplyWriter">
+							 <label for="exampleInputEmail1">Reply
+							Text</label> <input class="form-control" type="text"
+							placeholder="REPLY TEXT" id="newReplyText">
 					</div>
 
 					<div class="box-footer">
 						<button type="submit" class="btn btn-primary" id="replyAddBtn">ADD
 							REPLY</button>
 					</div>
-				</c:if>
+				
 
-				<c:if test="${empty login}">
+				
 					<div class="box-body">
 						<div>
 							<a href="javascript:goLogin();">로그인 하세요</a>
 						</div>
 					</div>
-				</c:if>
+				
 			</div>
 
 		
 		<!-- The time line -->
 		<ul class="timeline">
 		  <!-- timeline time label -->
-		<li class="time-label" id="repliesDiv">
-		  <span class="bg-green">
-		    Replies List <small id='replycntSmall'> [ ${boardVO.replycnt} ] </small>
-		    </span>
+		  <li class="time-label" id="repliesDiv">
+		 	<span class="bg-green">
+		   	Replies List <small id='replycntSmall'> [ ${QboardVO.replycnt} ] </small>
+		   	</span>
 		  </li>
 		</ul>
 		   
@@ -270,7 +268,7 @@
 
 	}
 
-	var bno = ${boardVO.bno};
+	var bno = ${QboardVO.bno};
 	
 	var replyPage = 1;
 
@@ -315,7 +313,7 @@
 		if ($(".timeline li").size() > 1) {
 			return;
 		}
-		getPage("/replies/" + bno + "/1");
+		getPage("/qreplies/" + bno + "/1");
 
 	});
 	
@@ -326,7 +324,7 @@
 		
 		replyPage = $(this).attr("href");
 		
-		getPage("/replies/"+bno+"/"+replyPage);
+		getPage("/qreplies/"+bno+"/"+replyPage);
 		
 	});
 	
@@ -341,7 +339,7 @@
 		  
 		  $.ajax({
 				type:'post',
-				url:'/replies/',
+				url:'/qreplies/',
 				headers: { 
 				      "Content-Type": "application/json",
 				      "X-HTTP-Method-Override": "POST" },
@@ -352,7 +350,7 @@
 					if(result == 'SUCCESS'){
 						alert("등록 되었습니다.");
 						replyPage = 1;
-						getPage("/replies/"+bno+"/"+replyPage );
+						getPage("/qreplies/"+bno+"/"+replyPage );
 						replyerObj.val("");
 						replytextObj.val("");
 					}
@@ -378,7 +376,7 @@
 		  
 		  $.ajax({
 				type:'put',
-				url:'/replies/'+rno,
+				url:'/qreplies/'+rno,
 				headers: { 
 				      "Content-Type": "application/json",
 				      "X-HTTP-Method-Override": "PUT" },
@@ -388,7 +386,7 @@
 					console.log("result: " + result);
 					if(result == 'SUCCESS'){
 						alert("수정 되었습니다.");
-						getPage("/replies/"+bno+"/"+replyPage );
+						getPage("/qreplies/"+bno+"/"+replyPage );
 					}
 			}});
 	});
@@ -400,7 +398,7 @@
 		  
 		  $.ajax({
 				type:'delete',
-				url:'/replies/'+rno,
+				url:'/qreplies/'+rno,
 				headers: { 
 				      "Content-Type": "application/json",
 				      "X-HTTP-Method-Override": "DELETE" },
@@ -409,7 +407,7 @@
 					console.log("result: " + result);
 					if(result == 'SUCCESS'){
 						alert("삭제 되었습니다.");
-						getPage("/replies/"+bno+"/"+replyPage );
+						getPage("/qreplies/"+bno+"/"+replyPage );
 					}
 			}});
 	});
@@ -466,7 +464,7 @@ $(document).ready(function(){
 		formObj.submit();
 	});
 	
-	var bno = ${boardVO.bno};
+	var bno = ${QboardVO.bno};
 	var template = Handlebars.compile($("#templateAttach").html());
 	
 	$.getJSON("/qboard/getAttach/"+bno,function(list){

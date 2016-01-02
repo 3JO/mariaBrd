@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.ibitu.domain.BoardVO;
 import org.ibitu.domain.PageMaker;
+import org.ibitu.domain.QBoardVO;
 import org.ibitu.domain.SearchCriteria;
 import org.ibitu.service.QBoardService;
 import org.slf4j.Logger;
@@ -42,7 +43,7 @@ public class QBoardController {
     
 //     pageMaker.setTotalCnt(service.listCntCriteria(cri));
     pageMaker.setTotalCnt(service.listSearchCount(cri));
-
+    
     model.addAttribute("pageMaker", pageMaker);
   }
 
@@ -50,7 +51,7 @@ public class QBoardController {
   public void read(@RequestParam("bno") int bno, @ModelAttribute("cri") SearchCriteria cri, Model model)
       throws Exception {
 
-    model.addAttribute(service.read(bno));
+    model.addAttribute("QboardVO",service.read(bno));
   }
 
   @RequestMapping(value = "/remove", method = RequestMethod.POST)
@@ -71,11 +72,11 @@ public class QBoardController {
   @RequestMapping(value = "/modify", method = RequestMethod.GET)
   public void modifyPagingGET(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 
-    model.addAttribute(service.read(bno));
+    model.addAttribute("QboardVO",service.read(bno));
   }
 
   @RequestMapping(value = "/modify", method = RequestMethod.POST)
-  public String modifyPagingPOST(BoardVO board, SearchCriteria cri, RedirectAttributes rttr) throws Exception {
+  public String modifyPagingPOST(QBoardVO board, SearchCriteria cri, RedirectAttributes rttr) throws Exception {
 
     logger.info(cri.toString());
     service.modify(board);
@@ -99,7 +100,7 @@ public class QBoardController {
   }
 
   @RequestMapping(value = "/register", method = RequestMethod.POST)
-  public String registPOST(BoardVO board, RedirectAttributes rttr) throws Exception {
+  public String registPOST(QBoardVO board, RedirectAttributes rttr) throws Exception {
 
     logger.info("regist post ...........");
     logger.info(board.toString());
