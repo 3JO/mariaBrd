@@ -1,5 +1,6 @@
 package org.ibitu.domain;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class DBoardVO {
@@ -11,6 +12,7 @@ public class DBoardVO {
 	private Date regdate;
 	private int viewcnt;
 	private int replycnt;
+	private String[] files;
 	
 	public Integer getBno() {
 		return bno;
@@ -56,11 +58,20 @@ public class DBoardVO {
 		this.replycnt = replycnt;
 	}
 	
+	public String[] getFiles() {
+		return files;
+	}
+	public void setFiles(String[] files) {
+		this.files = files;
+	}
+	
 	@Override
 	public String toString() {
 		return "DBoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer
-				+ ", regdate=" + regdate + ", viewcnt=" + viewcnt + ", replycnt=" + replycnt + "]";
+				+ ", regdate=" + regdate + ", viewcnt=" + viewcnt + ", replycnt=" + replycnt + ", files="
+				+ Arrays.toString(files) + "]";
 	}
+	
 	
 	
 	

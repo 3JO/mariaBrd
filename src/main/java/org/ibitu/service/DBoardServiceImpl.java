@@ -16,10 +16,16 @@ public class DBoardServiceImpl implements DBoardService {
 	@Autowired
 	private DBoardMapper mapper;
 	
+	@Transactional
 	@Override
 	public void regist(DBoardVO vo) throws Exception {
 		mapper.create(vo);
-
+		String[] files = vo.getFiles();
+		if(files==null){ return; }
+		
+		for(String fileName : files){
+			mapper.addAttach(fileName);
+		}
 	}
 	
 	@Transactional(isolation=Isolation.READ_COMMITTED)
@@ -28,17 +34,30 @@ public class DBoardServiceImpl implements DBoardService {
 		mapper.uptViewCnt(bno);
 		return mapper.read(bno);
 	}
-
+	
+	@Transactional
 	@Override
 	public void modify(DBoardVO vo) throws Exception {
 		mapper.update(vo);
+		
+		Integer bno = vo.getBno();
+		
+		mapper.deleteAttach(bno);
+		
+		String[] files = vo.getFiles();
+		
+		if(files==null) { return; }
+		
+		for (String fileName : files){
+			mapper.replaceAttach(fileName, bno);
+		}
 
 	}
 
 	@Override
 	public void remove(Integer bno) throws Exception {
+		mapper.deleteAttach(bno);
 		mapper.delete(bno);
-
 	}
 
 	@Override
@@ -50,5 +69,9 @@ public class DBoardServiceImpl implements DBoardService {
 	public int listSearchCnt(SearchCriteria cri) throws Exception {
 		return mapper.listSearchCnt(cri);
 	}
-
+	
+	@Override
+	public List<String> getAttach(Integer bno) throws Exception {
+		return mapper.getAttach(bno);
+	}
 }

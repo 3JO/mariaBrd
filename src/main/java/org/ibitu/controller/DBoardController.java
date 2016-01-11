@@ -1,6 +1,7 @@
 package org.ibitu.controller;
 
-import org.ibitu.domain.Criteria;
+import java.util.List;
+
 import org.ibitu.domain.DBoardVO;
 import org.ibitu.domain.PageMaker;
 import org.ibitu.domain.SearchCriteria;
@@ -11,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -95,6 +98,13 @@ public class DBoardController {
 		logger.info(rttr.toString());
 
 		return "redirect:/dboard/list";
+	}
+
+	@RequestMapping(value = "/getAttach/{bno}")
+	@ResponseBody
+	public List<String> getAttach(@PathVariable("bno") Integer bno) throws Exception {
+		
+		return service.getAttach(bno);
 	}
 
 }

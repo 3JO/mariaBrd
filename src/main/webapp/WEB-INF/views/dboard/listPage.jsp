@@ -89,7 +89,7 @@
 		</div>
 		<!-- /.row -->
 	</section>
-	<!-- /.content -->
+	<!-- /.content -->action
 </div>
 <!-- /.content-wrapper -->
 

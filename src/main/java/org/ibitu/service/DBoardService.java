@@ -18,4 +18,7 @@ public interface DBoardService {
 	public List<DBoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
 	
 	public int listSearchCnt(SearchCriteria cri) throws Exception;
+	
+	public List<String> getAttach(Integer bno)throws Exception;
+
 }
