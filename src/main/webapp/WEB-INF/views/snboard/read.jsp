@@ -10,7 +10,7 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			DOWNLOAD BOARD <small>List</small>
+			NOTICE BOARD <small>List</small>
 		</h1>
 
 	</section>
@@ -248,32 +248,32 @@
 		
 		$.getJSON(pageInfo,function(data){
 			printData(data.list, $("#repliesDiv") ,$('#template'));
-			printPaging(data.pagemaker, $(".pagination"));
+			printPaging(data.pageMaker, $(".pagination"));
 			
 			$("#modifyModal").modal('hide');
-			$("#replycntSmall").html("[ " + data.pagemaker.totalCount +" ]");
+			$("#replycntSmall").html("[ " + data.pageMaker.totalCnt +" ]");
 			
 		});
 	}
 
 
 
-	var printPaging = function(pagemaker, target) {
+	var printPaging = function(pageMaker, target) {
 
 		var str = "";
 
-		if (pagemaker.prev) {
-			str += "<li><a href='" + (pagemaker.startPage - 1)
+		if (pageMaker.prev) {
+			str += "<li><a href='" + (pageMaker.startPage - 1)
 					+ "'> << </a></li>";
 		}
 
-		for (var i = pagemaker.startPage, len = pagemaker.endPage; i <= len; i++) {
-			var strClass = pagemaker.cri.page == i ? 'class=active' : '';
+		for (var i = pageMaker.startPage, len = pageMaker.endPage; i <= len; i++) {
+			var strClass = pageMaker.cri.page == i ? 'class=active' : '';
 			str += "<li "+strClass+"><a href='"+i+"'>" + i + "</a></li>";
 		}
 
-		if (pagemaker.next) {
-			str += "<li><a href='" + (pagemaker.endPage + 1)
+		if (pageMaker.next) {
+			str += "<li><a href='" + (pageMaker.endPage + 1)
 					+ "'> >> </a></li>";
 		}
 

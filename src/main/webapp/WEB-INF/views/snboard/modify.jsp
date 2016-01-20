@@ -20,7 +20,7 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			DOWNLOAD BOARD <small>List</small>
+			NOTICE BOARD <small>List</small>
 		</h1>
 
 	</section>
