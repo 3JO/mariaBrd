@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @RequestMapping("/nboard/*")
 public class BoardController {
-
+ 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
  
 	
