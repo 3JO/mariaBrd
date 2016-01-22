@@ -62,19 +62,19 @@
               </ol>
               <div class="carousel-inner">
                 <div class="item active">
-                  <img src="http://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap" alt="First slide">
+                  <img src="http://placehold.it/900x500/39CCCC/ffffff&text=홀로그램 제품 사진" alt="First slide">
                   <div class="carousel-caption">
                     First Slide
                   </div>
                 </div>
                 <div class="item">
-                  <img src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
+                  <img src="http://placehold.it/900x500/3c8dbc/ffffff&text=홀로그램 제품 사진" alt="Second slide">
                   <div class="carousel-caption">
                     Second Slide
                   </div>
                 </div>
                 <div class="item">
-                  <img src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
+                  <img src="http://placehold.it/900x500/f39c12/ffffff&text=홀로그램 제품 사진" alt="Third slide">
                   <div class="carousel-caption">
                     Third Slide
                   </div>
@@ -107,7 +107,7 @@
 
 							<table class="table table-bordered" >
 								<tr>
-									<th style="text-align: center;">BNO</th>
+									<th style="width: 10px; text-align: center;">BNO</th>
 									<th style="text-align: center;">TITLE</th>
 									<th style="text-align: center;">WRITER</th>
 									<th style="text-align: center;">REGDATE</th>
