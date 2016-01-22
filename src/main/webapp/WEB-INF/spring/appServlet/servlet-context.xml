@@ -47,9 +47,9 @@
 			<beans:ref bean="loginInterceptor" />
 		</interceptor>
 		<interceptor>
-			<mapping path="/snboard/register" />
-			<mapping path="/snboard/modify" />
-			<mapping path="/snboard/remove" />
+			<mapping path="/*/register" />
+			<mapping path="/*/modify" />
+			<mapping path="/*/remove" />
 			<beans:ref bean="authInterceptor" />
 		</interceptor>
 	</interceptors>
