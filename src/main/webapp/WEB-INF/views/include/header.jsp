@@ -244,7 +244,7 @@
           <!--<div style="left: 10px" class="sidebar-form-box-footer clearfix">-->
            <div style="margin-left: 10px; margin-bottom: 30px;">
 
-            <a href="http://localhost:8080/join/"><button style="width: 104px" class="btn btn-default"> 회원가입</button></a>
+            <a href="http://localhost:8080/account/createAccount"><button style="width: 104px" class="btn btn-default"> 회원가입</button></a>
             <button style="width: 104px" type="submit" class="btn btn-primary">  로그인  </button>
 
           </div>
