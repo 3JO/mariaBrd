@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page session="false"%>
+
 
 <%@include file="../include/header.jsp"%>
 
@@ -28,6 +28,7 @@
 						<h3 class="box-title">LIST ALL PAGE</h3>
 						<button type="submit" class="btn btn-primary pull-right">New
 							Board</button>
+							<form action="/user/logout" method="post"><button>logout</button></form>
 					</div>
 
 					<table class="table table-bordered">

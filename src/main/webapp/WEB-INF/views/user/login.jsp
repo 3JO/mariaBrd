@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>AdminLTE 2 | Log in</title>
+    <title>IBITU | HoloVision</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -25,10 +25,10 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="/resources/index2.html"><b>Zerock</b>Project</a>
+        <a href="/resources/index2.html">Welcome to <b>HoloVision</b></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">Please Input ID & PW to Sign IN</p>
 
 <form action="/user/loginPost" method="post">
   <div class="form-group has-feedback">
@@ -54,7 +54,7 @@
 </form>
 
 
-        <a href="#">I forgot my password</a><br>
+        <a href="http://localhost:8080/account/createAccount">I forgot my password</a><br>
         <a href="register.html" class="text-center">Register a new membership</a>
 
       </div><!-- /.login-box-body -->

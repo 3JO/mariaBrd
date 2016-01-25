@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>IBITU | Project</title>
+<title>IBITU | HoloVision</title>
 <meta
 	content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
 	name='viewport'>
@@ -23,12 +23,14 @@
 <!-- Theme style -->
 <link href="/resources/dist/css/AdminLTE.min.css" rel="stylesheet"
 	type="text/css" />
+<link href="/resources/plugins/iCheck/square/blue.css" rel="stylesheet"
+	type="text/css" />
 <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
 <link href="/resources/dist/css/skins/_all-skins.min.css"
 	rel="stylesheet" type="text/css" />
- <link rel="stylesheet" href="/resources/bootstrap/css/weather lamp.css">
- 
+<link rel="stylesheet" href="/resources/bootstrap/css/weather lamp.css">
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -40,178 +42,180 @@
 <!-- jQuery 2.1.4 -->
 <script src="/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <script type="text/javascript" src="/resources/js/upload.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+<!-- Bootstrap 3.3.2 JS -->
+<script src="/resources/bootstrap/js/bootstrap.min.js"
+	type="text/javascript"></script>
+<!-- iCheck -->
+<script src="/resources/plugins/iCheck/icheck.min.js"
+	type="text/javascript"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
-
-		<header class="main-header">
-			<!-- Logo -->
-			<a href="http://localhost:8080/" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini"><b>IBU</b></span> <!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>I.BIT.U</b> PROJECT</span>
-			</a>
-			<!-- Header Navbar: style can be found in header.less -->
-			<nav class="navbar navbar-static-top" role="navigation">
-				<!-- Sidebar toggle button-->
-				<a href="#" class="sidebar-toggle" data-toggle="offcanvas"
-					role="button"> <span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
+	<c:if test="${empty login}">
+			<header class="main-header">
+				<!-- Logo -->
+				<a href="http://localhost:8080/" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+					<span class="logo-mini"><b>IBU</b></span> <!-- logo for regular state and mobile devices -->
+					<span class="logo-lg"><b>I.BIT.U</b> PROJECT</span>
 				</a>
-				<div class="navbar-custom-menu">
-					<ul class="nav navbar-nav">
-						<!-- Messages: style can be found in dropdown.less-->
-						<li class="dropdown messages-menu"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"> <i
-								class="fa fa-envelope-o"></i> <span class="label label-success">4</span>
-						</a>
-							<ul class="dropdown-menu">
-								<li class="header">You have 4 messages</li>
-								<li>
-									<!-- inner menu: contains the actual data -->
-									<ul class="menu">
-										<li>
-											<!-- start message --> <a href="#">
-												<div class="pull-left">
-													<img src="/resources/dist/img/user7-128x128.jpg"
-														class="img-circle" alt="User Image" />
-												</div>
-												<h4>
-													Support Team <small><i class="fa fa-clock-o"></i> 5
-														mins</small>
-												</h4>
-												<p>Why not buy a new awesome theme?</p>
-										</a>
-										</li>
-										<!-- end message -->
-										<li><a href="#">
-												<div class="pull-left">
-													<img src="/resources/dist/img/user3-128x128.jpg"
-														class="img-circle" alt="user image" />
-												</div>
-												<h4>
-													AdminLTE Design Team <small><i
-														class="fa fa-clock-o"></i> 2 hours</small>
-												</h4>
-												<p>Why not buy a new awesome theme?</p>
-										</a></li>
-										<li><a href="#">
-												<div class="pull-left">
-													<img src="/resources/dist/img/user4-128x128.jpg"
-														class="img-circle" alt="user image" />
-												</div>
-												<h4>
-													Developers <small><i class="fa fa-clock-o"></i>
-														Today</small>
-												</h4>
-												<p>Why not buy a new awesome theme?</p>
-										</a></li>
-										<li><a href="#">
-												<div class="pull-left">
-													<img src="/resources/dist/img/user3-128x128.jpg"
-														class="img-circle" alt="user image" />
-												</div>
-												<h4>
-													Sales Department <small><i class="fa fa-clock-o"></i>
-														Yesterday</small>
-												</h4>
-												<p>Why not buy a new awesome theme?</p>
-										</a></li>
-										<li><a href="#">
-												<div class="pull-left">
-													<img src="/resources/dist/img/user4-128x128.jpg"
-														class="img-circle" alt="user image" />
-												</div>
-												<h4>
-													Reviewers <small><i class="fa fa-clock-o"></i> 2
-														days</small>
-												</h4>
-												<p>Why not buy a new awesome theme?</p>
-										</a></li>
-									</ul>
-								</li>
-								<li class="footer"><a href="#">See All Messages</a></li>
-							</ul></li>
-						<!-- Notifications: style can be found in dropdown.less -->
-						<li class="dropdown notifications-menu"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"> <i
-								class="fa fa-bell-o"></i> <span class="label label-warning">10</span>
-						</a>
-							<ul class="dropdown-menu">
-								<li class="header">You have 10 notifications</li>
-								<li>
-									<!-- inner menu: contains the actual data -->
-									<ul class="menu">
-										<li><a href="#"> <i class="fa fa-users text-aqua"></i>
-												5 new members joined today
-										</a></li>
-										<li><a href="#"> <i class="fa fa-warning text-yellow"></i>
-												Very long description here that may not fit into the page
-												and may cause design problems
-										</a></li>
-										<li><a href="#"> <i class="fa fa-users text-red"></i>
-												5 new members joined
-										</a></li>
+				<!-- Header Navbar: style can be found in header.less -->
+				<nav class="navbar navbar-static-top" role="navigation">
+					<!-- Sidebar toggle button-->
+					<a href="#" class="sidebar-toggle" data-toggle="offcanvas"
+						role="button"> <span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+					</a>
+				</nav>
+			</header>
+		</c:if>
+	
+		<c:if test="${not empty login}">
+			<header class="main-header">
+				<!-- Logo -->
+				<a href="http://localhost:8080/" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+					<span class="logo-mini"><b>IBU</b></span> <!-- logo for regular state and mobile devices -->
+					<span class="logo-lg"><b>I.BIT.U</b> PROJECT</span>
+				</a>
+				<!-- Header Navbar: style can be found in header.less -->
+				<nav class="navbar navbar-static-top" role="navigation">
+					<!-- Sidebar toggle button-->
+					<a href="#" class="sidebar-toggle" data-toggle="offcanvas"
+						role="button"> <span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+					</a>
+					<div class="navbar-custom-menu">
+						<ul class="nav navbar-nav">
 
-										<li><a href="#"> <i
-												class="fa fa-shopping-cart text-green"></i> 25 sales made
-										</a></li>
-										<li><a href="#"> <i class="fa fa-user text-red"></i>
-												You changed your username
-										</a></li>
-									</ul>
-								</li>
-								<li class="footer"><a href="#">View all</a></li>
-							</ul></li>
-						<!-- User Account: style can be found in dropdown.less -->
-						<li class="dropdown user user-menu"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"> <img
-								src="/resources/dist/img/user2-160x160.jpg" class="user-image"
-								alt="User Image" /> <span class="hidden-xs">Alexander
-									Pierce</span>
-						</a>
-							<ul class="dropdown-menu">
-								<!-- User image -->
-								<li class="user-header"><img
-									src="/resources/dist/img/user2-160x160.jpg" class="img-circle"
-									alt="User Image" />
-									<p>
-										Alexander Pierce - Web Developer <small>Member since
-											Nov. 2012</small>
-									</p></li>
-								<!-- Menu Body -->
-								<li class="user-body">
-									<div class="col-xs-4 text-center">
-										<a href="#">Followers</a>
-									</div>
-									<div class="col-xs-4 text-center">
-										<a href="#">Sales</a>
-									</div>
-									<div class="col-xs-4 text-center">
-										<a href="#">Friends</a>
-									</div>
-								</li>
-								<!-- Menu Footer-->
-								<li class="user-footer">
-									<div class="pull-left">
-										<a href="#" class="btn btn-default btn-flat">Profile</a>
-									</div>
-									<div class="pull-right">
-										<a href="#" class="btn btn-default btn-flat">Sign out</a>
-									</div>
-								</li>
-							</ul></li>
-					</ul>
-				</div>
-			</nav>
-		</header>
+							<!-- User Account: style can be found in dropdown.less -->
+							<li class="dropdown user user-menu"><a href="#"
+								class="dropdown-toggle" data-toggle="dropdown"> <img
+									src="/resources/dist/img/user2-160x160.jpg" class="user-image"
+									alt="User Image" /> <span class="hidden-xs">${login.uname }&nbsp;<i
+										class="glyphicon glyphicon-heart"></i></span>
+							</a>
+					</div>
+				</nav>
+			</header>
+		</c:if>
 		<!-- Left side column. contains the logo and sidebar -->
 		<aside class="main-sidebar">
 			<!-- sidebar: style can be found in sidebar.less -->
 			<section class="sidebar">
-			
+
+				<c:if test="${empty login}">
+					<div class="sidebar-menu">
+						<form action="/user/loginPost" method="post"
+							style="height: 140px;">
+							<div class="form-group has-feedback"
+								style="border-right-width: -; margin-right: 10px; margin-left: 10px; margin-top: 15px;">
+								<input type="text" name="uid" class="form-control"
+									placeholder="USER ID" /> <span
+									class="glyphicon glyphicon-envelope form-control-feedback"></span>
+							</div>
+							<div class="form-group has-feedback"
+								style="border-right-width: -; margin-right: 10px; margin-left: 10px; margin-top: 15px; margin-bottom: 0px;">
+								<input type="password" name="upw" class="form-control"
+									placeholder="Password" /> <span
+									class="glyphicon glyphicon-lock form-control-feedback"></span>
+							</div>
+							<div class="form-group has-feedback"
+								style="border-right-width: -; margin-right: 10px; margin-left: 10px; margin-top: 15px; margin-bottom: 15px; height: 34px;">
+								<div class="col-xs-6"
+									style="margin-left: 0px; color: white; padding-left: 0px;">
+									<div class="checkbox icheck">
+										<label> <input type="checkbox" name="useCookie">
+											Remember
+										</label>
+									</div>
+								</div>
+								<!-- /.col -->
+								<div class="col-xs-6 pull-right"
+									style="padding-left: 0px; padding-right: 0px; margin-right: 0px; height: 40px;">
+									<button type="submit"
+										class="btn btn-primary btn-block btn-flat">
+										<i class="glyphicon glyphicon-log-in"></i>&nbsp; Sign In
+									</button>
+								</div>
+								<!-- /.col -->
+							</div>
+
+						</form>
+
+						<hr width="90%" style="margin-bottom: 5px; margin-top: 15px;">
+
+						<ul class="sidebar-menu">
+							<li class="treeview"><a href="#"
+								style="padding-bottom: 10px; padding-top: 10px;"> <i
+									class="glyphicon glyphicon-search"></i> <span>I forgot
+										my password</span>
+							</a></li>
+							<li class="treeview"><a
+								href="http://localhost:8080/account/createAccount"
+								style="padding-bottom: 10px; padding-top: 10px;"> <i
+									class="glyphicon glyphicon-heart"></i> <span>Register a
+										new membership</span>
+							</a></li>
+						</ul>
+
+						<hr width="90%" style="margin-bottom: 15px; margin-top: 5px;">
+					</div>
+				</c:if>
+
+				<c:if test="${not empty login}">
+					<div class="user-panel"
+						style="padding-left: 5px; padding-right: 5px;">
+						<h4 style="color: white; margin-top: 0px; margin-bottom: 0px;">
+							<i class="glyphicon glyphicon-flash"></i>&nbsp;Welcome to
+							HoloVision&nbsp;<i class="glyphicon glyphicon-flash"></i>
+						</h4>
+						<br>
+						<div class="pull-left image">
+							<img src="/resources/dist/img/user2-160x160.jpg"
+								class="img-circle" alt="User Image" />
+						</div>
+
+						<div class="pull-right info" style="font-size: 14pt">
+
+							${login.uname }&nbsp;<i class="glyphicon glyphicon-heart"></i><br>
+							<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+						</div>
+					</div>
+
+
+					<div class="form-group has-feedback"
+						style="border-right-width: -; margin-right: 10px; margin-left: 10px; margin-top: 15px; margin-bottom: 15px; height: 34px;">
+
+						<!-- /.col -->
+						<div class="col-xs-6 pull-left"
+							style="padding-left: 0px; padding-right: 0px; margin-right: 0px; height: 40px;">
+							<form action=#>
+								<button type="submit" class="btn btn-warning btn-block btn-flat">
+									<i class="glyphicon glyphicon-cog"></i>&nbsp; My Info
+								</button>
+							</form>
+						</div>
+
+						<div class="col-xs-6 pull-right"
+							style="padding-left: 0px; padding-right: 0px; margin-right: 0px; height: 40px;">
+							<form action="/user/logout" method="post">
+								<button type="submit" class="btn btn-danger btn-block btn-flat">
+									<i class="glyphicon glyphicon-log-out"></i>&nbsp; Sign out
+								</button>
+							</form>
+
+						</div>
+						<!-- /.col -->
+					</div>
+
+				</c:if>
+
+
 				<!-- Sidebar user panel -->
-			<!-- 	<div class="user-panel">
+				<!-- 	<div class="user-panel">
 					<div class="pull-left image">
 						<img src="/resources/dist/img/user2-160x160.jpg"
 							class="img-circle" alt="User Image" />
@@ -222,11 +226,11 @@
 						<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 					</div>
 				</div> -->
-				
+
+
+				<!-- 			
 			
-			
-			
-		 <!-- 새로 만든 부분 id 패스워드-->
+		 새로 만든 부분 id 패스워드
           <form style = "margin-top: 30px;" action="#" method="get" class="sidebar-form">
             <div>
               <input type="text" name="q" class="form-control" placeholder="ID">
@@ -241,7 +245,7 @@
 
 
 
-          <!--<div style="left: 10px" class="sidebar-form-box-footer clearfix">-->
+          <div style="left: 10px" class="sidebar-form-box-footer clearfix">
            <div style="margin-left: 10px; margin-bottom: 30px;">
 
             <a href="http://localhost:8080/account/createAccount"><button style="width: 104px" class="btn btn-default"> 회원가입</button></a>
@@ -249,37 +253,51 @@
 
           </div>
 
-           
-			
-			
-			
-			
-			
-			
-			
-			
-			
+            -->
+
+
+
+
+
+
+
+
+
 				<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu">
 					<li class="header">WELCOME</li>
-					<li class="active treeview"><a href="http://localhost:8080/iboard/"> <i
+					<li class="active treeview"><a
+						href="http://localhost:8080/iboard/"> <i
 							class="fa fa-info-circle"></i> <span>Introduce</span>
 					</a></li>
 
 					<li class="header">BOARDS</li>
-					<li class="treeview"><a href="http://localhost:8080/snboard/list"> <i
+					<li class="treeview"><a
+						href="http://localhost:8080/snboard/list"> <i
 							class="fa fa-paper-plane"></i> <span>Notice</span>
 					</a></li>
 
-					<li class="treeview"><a href="http://localhost:8080/qboard/list"> <i
+					<li class="treeview"><a
+						href="http://localhost:8080/qboard/list"> <i
 							class="fa fa-mortar-board"></i> <span>Q&A</span>
 					</a></li>
 
 					<li class="header">REFERENCE</li>
-					<li class="treeview"><a href="http://localhost:8080/dboard/list"> <i
+					<li class="treeview"><a
+						href="http://localhost:8080/dboard/list"> <i
 							class="fa fa-download"></i> <span>Downloads</span>
 					</a></li>
 				</ul>
 			</section>
 			<!-- /.sidebar -->
 		</aside>
+
+		<script>
+			$(function() {
+				$('input').iCheck({
+					checkboxClass : 'icheckbox_square-blue',
+					radioClass : 'iradio_square-blue',
+					increaseArea : '20%' // optional
+				});
+			});
+		</script>
