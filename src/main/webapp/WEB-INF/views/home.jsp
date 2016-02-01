@@ -24,8 +24,8 @@
 	
 	<!-- <section class="content-header"> 이거 살리면 gif파일사이에 공간이 생김-->
 	
-		<img src= "/resources/main_weather.gif" width="100%" height="170px">
-
+		<!-- <img src= "/resources/main_weather.gif" width="100%" height="170px"> -->
+		<img src= "/resources/333.gif" width="100%" height="170px">
 	<!-- </section> --> 
 
 
@@ -51,7 +51,7 @@
         <div class="box box-solid">
           <div class="box-header with-border">
             <h3 class="box-title">Carousel</h3>
-          </div><!-- /.box-header -->
+          </div><!-- /.box-header -->`
           <div class="box-body" style="height: 410px">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">

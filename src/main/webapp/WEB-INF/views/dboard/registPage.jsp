@@ -50,7 +50,7 @@
 							<div class="form-group">
 								<label for="exampleInputEmail1">Writer</label> <input
 									type="text" name="writer" class="form-control"
-									value='${login.uid }' readonly>
+									value='${login.uname }' readonly>
 							</div>
 							
 							<div class="form-group">

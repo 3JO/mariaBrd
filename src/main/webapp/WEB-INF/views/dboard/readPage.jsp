@@ -94,7 +94,7 @@
 
 						<ul class="mailbox-attachments clearfix uploadedList">
 						</ul>
-						<c:if test="${login.uid == dboardVO.writer}">
+						<c:if test="${login.uname == dboardVO.writer}">
 							<button type="submit" class="btn btn-warning" id="modify">Modify</button>
 							<button type="submit" class="btn btn-danger" id="remove">REMOVE</button>
 							
@@ -125,7 +125,7 @@
 						<div class="box-body">
 							<label for="exampleInputEmail1">Writer</label> <input
 								class="form-control" type="text" placeholder="USER ID"
-								id="newReplyWriter" value="${login.uid }" readonly="readonly">
+								id="newReplyWriter" value="${login.uname }" readonly="readonly">
 							<label for="exampleInputEmail1">Reply Text</label> <input
 								class="form-control" type="text" placeholder="REPLY TEXT"
 								id="newReplyText">
@@ -225,7 +225,7 @@
 <script>
 	Handlebars.registerHelper("eqReplyer", function(replyer, block) {
 		var accum = '';
-		if (replyer == '${login.uid}') {
+		if (replyer == '${login.uname}') {
 			accum += block.fn();
 		}
 		return accum;

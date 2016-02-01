@@ -26,9 +26,8 @@
 				<div class="box box box-primary">
 					<div class="box-header with-border">
 						<h3 class="box-title">LIST ALL PAGE</h3>
-						<button type="submit" class="btn btn-primary pull-right">New
+						<button type="submit" class="btn btn-primary btn-flat pull-right">New
 							Board</button>
-							<form action="/user/logout" method="post"><button>logout</button></form>
 					</div>
 
 					<table class="table table-bordered">
@@ -63,7 +62,7 @@
 						<select name="searchType">
 							<option value="n"
 								<c:out value="${cri.searchType == null?'selected':''}"/>>
-								---</option>
+								Select Searching Type</option>
 							<option value="t"
 								<c:out value="${cri.searchType eq 't'?'selected':''}"/>>
 								Title</option>
@@ -84,7 +83,7 @@
 								Title OR Content OR Writer</option>
 						</select> <input type="text" name='keyword' id="keywordInput"
 							value='${cri.keyword }'>
-						<button class="btn bg-olive">Search</button>
+						<button class="btn bg-olive btn-flat">Search</button>
 
 
 					</div>

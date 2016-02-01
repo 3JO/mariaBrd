@@ -1,0 +1,22 @@
+@import "compass/css3";
+
+
+body {
+  background-color: #01aaff;
+  
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #01AAFF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #01AAFF;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
